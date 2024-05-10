@@ -1,0 +1,58 @@
+$breakpoint-desktop: 1200px;
+
+.slider {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+
+  img {
+    width: 50%;
+    display: block;
+    // padding: 25px;
+    height: 100%;
+
+    @media screen and (min-width: 1200px) {
+      width: 20%;
+      padding: 25px;
+    }
+  }
+
+  .slides {
+    display: flex;
+    min-width: 300%; // Устанавливаем минимальную ширину, чтобы слайды не сжимались
+    transition: transform 0.5s ease-in-out;
+    height: 500px;
+  }
+
+  button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  }
+
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .slider {
+    max-width: 800px; // Центрируем слайдер на больших экранах
+    margin: auto;
+  }
+}
